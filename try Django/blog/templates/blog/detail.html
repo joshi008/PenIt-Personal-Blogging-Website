@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+Blog
+{% endblock %}
+
+{% block content %}
+<div class="container" style="padding-top: 5rem">
+	{% include 'blog/list-inline.html' with blog_post=object detail=True%}
+
+	{% if request.user.is_authenticated %}
+		{% if request.user.is_staff %}
+		<br>
+		<div class="col-12">
+			<button class="btn btn-warning" onclick="location.href='{{ object.get_edit_url }}'" type="button" style="margin-right: 1rem">Edit</button>
+			<button class="btn btn-danger" onclick="location.href='{{ object.get_delete_url }}'" type="button">Delete</button>
+		</div>
+		{% endif %}
+	{% endif %}
+	<br>
+
+	<div class="fb_back">
+	<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="true"></div>
+
+	<br>
+	<br>
+	<br>
+
+	<div class="fb-comments" data-href="http://127.0.0.1:8000/blog/blog_post.slug/" data-numposts="5" data-width=""></div>
+	</div>
+</div>
+{% endblock %}

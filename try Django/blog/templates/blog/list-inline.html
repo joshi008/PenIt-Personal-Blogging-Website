@@ -1,0 +1,35 @@
+<!-- <li><a href="{{ blog_post.get_absolute_url }}">{{ blog_post.title }}</a></li> -->
+
+<!-- We can also use 'object' instead of 'blog_post' -->
+<!-- <div class="col-12 col-md-10 mb-4 mx-auto"> -->
+	
+
+<!-- card -->
+<div class="card text-center {% if not blog_post.publish_date %} border  border-warning {% endif %}">
+	<!-- <div class="card-body"> -->
+		{% if blog_post.image %}
+		<a href="{{ blog_post.get_absolute_url }}" >
+			<img src="{{ blog_post.image.url }}" class="card-img-top img">
+		</a>
+		{% endif %}
+		<div class="post_content">
+		<h5 class="card-title post_head">{{ blog_post.title }}</h5>
+		<p class="card-text">
+			<small class='text-muted'>{{ blog_post.publish_date }}</small>
+
+			{% if truncate %}
+				{{ blog_post.content | safe | linebreaks | truncatewords:30}}
+			{% else %}
+				{{ blog_post.content | safe | linebreaks }}
+			{% endif %}
+		</p>
+		
+
+		{% if not detail %}
+			{% if not blog_post.publish_date %} <a class="btn btn-danger" href="{{ object.get_edit_url }}">Draft</a> {% endif %}
+			<a href="{{ blog_post.get_absolute_url }}" class="btn btn-primary">View</a>
+		{% endif %}
+	</div>
+
+	<!-- </div> -->
+</div>

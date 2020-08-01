@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+Blog
+{% endblock %}
+
+{% block content %}
+	<!-- <div class="row"> -->
+		<div class="card-columns container" style="padding-top: 5rem">
+	{% for object in object_list %}
+		{% include 'blog/list-inline.html' with blog_post=object truncate=True detail=False%}
+	{% endfor %}
+	<!-- </div> -->
+</div>
+{% endblock %}

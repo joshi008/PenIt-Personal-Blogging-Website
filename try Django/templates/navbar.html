@@ -1,0 +1,35 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: rgba(255, 255, 255,1);">   <!-- navbar-dark bg-dark   sticky-top -->
+  <div class="container">
+  <a class="navbar-brand padd"  href="/"><img src="{% static 'image/penitwhite2.png' %}" alt="Pen It" style="height: 2.5rem"></a>
+  <button class="navbar-toggler padd" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item padd">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-item padd">
+        <a class="nav-link" href="/blog">Blog</a>
+      </li>
+      <li class="nav-item padd">
+        <a class="nav-link" href="/blog-new">Create New Blog</a>
+      </li>
+    </ul>
+    
+    <form class="form-inline my-2 my-lg-0 padd" action="/search/">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q">
+      <button class="btn btn-outline-success my-2 my-sm-0 padd" type="submit">Search</button>
+    </form>
+
+    <ul class="navbar-nav ml" style="margin-left: 0">
+      <li class="nav-item padd">
+        <button class="btn btn-info" onclick="location.href='/admin'" type="button">Login</button>
+      </li>
+    </ul>
+  </div>
+  </div>
+</nav>

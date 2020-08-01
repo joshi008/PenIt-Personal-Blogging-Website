@@ -1,0 +1,279 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <script src="{% static 'javascript/jquery-3.5.1.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kalam">
+    <style type="text/css">
+      .ic {
+        width: 24px !important;
+        height: 24px !important;
+      }
+
+      .arrow {
+        box-sizing: border-box;
+        height: 5vw;
+        width: 5vw;
+        border-style: solid;
+        border-color: white;
+        border-width: 0px 1px 1px 0px;
+        transform: rotate(45deg);
+        transition: border-width 150ms ease-in-out;
+      }
+
+      .arrow:hover {
+        border-bottom-width: 4px;
+        border-right-width: 4px;
+      }
+
+      .fb_back {
+        background-color: white;
+        border-radius: 6px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+      .padd {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        font-size: 1.25rem;
+      }
+
+      body {
+        height: 100%;
+        background-image: url("{% static 'image/bg.jpg' %}");
+        /*background-repeat: no-repeat, repeat;*/
+        background-color: #fff;
+        scroll-behavior: smooth;
+      }
+      .post_box {
+        /*background-color: rgba(0, 0, 0, 0.5);*/
+        /*color: #ffffff;*/
+        background-color: #fff;
+        border-radius: 6px;
+        font-family: 'PT Sans';
+        display: table;
+        position: relative;
+        margin: 0.5rem;
+      }
+
+      .card-columns {
+        @include media-breakpoint-only(lg) {
+          column-count: 4;
+        }
+        @include media-breakpoint-only(xl) {
+          column-count: 5;
+        }
+      }
+
+      .img {
+        border-radius: 6px 6px 0 0;
+      }
+
+      .post_head {
+        color: #f64c3f;
+      }
+      .post_content {
+        padding: 1rem;
+      }
+
+      .top-img {
+        max-width:100%;
+        height:auto;
+      }
+
+    .fluidx {
+      width: auto;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .bgimg-1 {
+      /*background-image: url('media/image/popo1.jpg');*/
+      max-width: 100%;
+      height: auto;
+    }
+
+    #bg {
+      width: 100%;
+      display: fixed;
+      position: relative;
+      text-align: center;
+    }
+    #bg img {
+      width:100%;
+      height: auto;
+      position: relative;
+    }
+    .centered {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size:6vw;
+      font-family: Kalam;
+    }
+
+    .bottom_centered {
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      
+    }
+
+    .site-footer {
+      padding: 2rem 0;
+      background: #333333; }
+      @media (min-width: 768px) {
+        .site-footer {
+          padding: 5rem 0; } }
+      .site-footer .border-top {
+        border-top: 1px solid rgba(255, 255, 255, 0.1) !important; }
+      .site-footer p {
+        color: #737373; }
+      .site-footer h2, .site-footer h3, .site-footer h4, .site-footer h5 {
+        color: #fff; }
+      .site-footer a {
+        color: #999999; }
+        .site-footer a:hover {
+          color: white; }
+      .site-footer ul li {
+        margin-bottom: 5px; }
+      .site-footer .footer-heading {
+        font-size: 20px;
+        color: #fff; }
+    
+
+    .w3-wide {letter-spacing: 10px;}
+    .w3-hover-opacity {cursor: pointer;}
+
+    /* Turn off parallax scrolling for tablets and phones */
+    @media only screen and (max-device-width: 1600px) {
+      .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+        min-height: 400px;
+      }
+    }
+
+    @media screen and (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+    }
+
+    </style>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+
+
+    <script>
+      jQuery($ => {
+        // The speed of the scroll in milliseconds
+        const speed = 1000;
+
+        $('a[href*="#"]')
+          .filter((i, a) => a.getAttribute('href').startsWith('#') || a.href.startsWith(`${location.href}#`))
+          .unbind('click.smoothScroll')
+          .bind('click.smoothScroll', event => {
+            const targetId = event.currentTarget.getAttribute('href').split('#')[1];
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              event.preventDefault();
+              $('html, body').animate({ scrollTop: $(targetElement).offset().top }, speed);
+            }
+          });
+      });
+    </script>
+
+    <script>
+      $(document).ready(function(){
+          if(window.matchMedia("(max-width: 767px)").matches){
+              // The viewport is less than 768 pixels wide
+              $(".navbar").addClass("sticky-top");
+              $(".navbar").removeClass("fixed-top");
+          } else{
+              // The viewport is at least 768 pixels wide
+              $(".navbar").addClass("fixed-top");
+              $(".navbar").removeClass("sticky-top");
+          }
+      });
+    </script>
+    
+
+    {% block head_block %}
+      
+      {% endblock %}    
+
+    <title>{% block title_head %}
+      
+      {% endblock %}</title>
+  </head>
+  <body>
+    {% block home %}
+      
+      {% endblock %}
+
+    <!-- <div id="fb-root"></div> -->
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0" nonce="7KXt0syc"></script>
+    {% include 'navbar.html' %}
+      <!-- fluidx  & container-fluid-->
+  		
+  		<!-- <h1>{{title}}</h1> -->
+
+      {% block content %}
+      
+      {% endblock %}
+		    
+
+    
+
+    <div class="site-footer page-footer">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-4">
+            <h3 class="footer-heading mb-4">About Me</h3>
+            <p style="font-family: kalam; font-size: 1.2rem">I am Arti Joshi, a student, a mother and most importantly a dreamer. I am currently pursuing my PHD under AIMS-Delhi and have a keen interest in Zoology.</p>
+          </div>
+          <div class="col-md-3 ml-auto">  
+          </div>
+          <div class="col-md-4">
+            <div>
+              <h3 class="footer-heading mb-4">Connect With Me</h3>
+              <p>
+                <a href="https://www.facebook.com/arti.joshi.9484" target="_blank"><span class="ic icon-facebook pt-2 pr-2 pb-2 pl-0"></span></a>
+                <a href="#" target="_blank"><span class="ic icon-twitter p-2"></span></a>
+                <a href="#" target="_blank"><span class="ic icon-instagram p-2"></span></a>
+                <a href="https://www.youtube.com/channel/UCc6bZwA-Av0ata3-QwY7Yng" target="_blank"><span class="ic icon-youtube p-2"></span></a>
+                <a href="mailto: artijoshi2108@gmail.com" target="_blank"><span class="ic icon-envelope p-2"></span></a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 text-center">
+            <p>
+              Made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://www.linkedin.com/in/hrishabh-joshi-39267718b/" target="_blank" >HJ</a>
+              </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+  </body>
+</html>

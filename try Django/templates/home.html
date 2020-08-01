@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block head_block %}	
+{% endblock %}
+
+{% block home %}
+
+{% endblock %}
+
+{% block content %}
+
+<!-- <h1>{{title}}</h1> -->
+
+
+{% if user.is_authenticated %}
+{% endif %}
+
+
+<!-- <h1>User only data</h1> -->
+
+<!-- <h3>Hello, {{user}} <br> Welcome to your site.</h3>	 -->
+<!-- <div class="parallax"></div> -->
+
+<!-- <img src="media/image/dream1.jpg" class="bgimg-1"> 
+ --><!-- Dream -->
+<div id="bg">
+  <img src="media/image/dream1.jpg" alt="">
+  <div class="centered">Step into a dream and let it drip from your fingertip</div>
+  <div class="bottom_centered"><a href="#jump_here"><div class="arrow"></div></a></div>
+</div>
+
+<section id="jump_here">
+<div class="card-columns container" id="about" style="padding-top: 5rem">
+	{% for a in blog_list %}
+
+		{% include 'blog/list-inline.html' with blog_post=a truncate=True detail=False %}
+
+	{% endfor %}
+
+</div>
+</section>
+
+
+{% endblock %}
