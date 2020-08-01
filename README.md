@@ -28,6 +28,7 @@
  7. And blog page will display every blog. It will display your drafts only if you are logged in. So readers will see only your published items.
  8. You can update an existing blog.
  9. Search for your blogs through search button at the top. And it not only search from titles of your blog but also contents of your blog.
+ 10. Only you can create a blog, edit it and delete it.
 
 
  # Now if you want it, you can use it.
