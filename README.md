@@ -6,10 +6,10 @@
  
  
  # How to run project after downloading?
- 1. Goto folder try Django where manage.py is present from your cmd or linux terminal.
+ 1. Enter folder "try Django" where manage.py is present using your cmd or linux terminal.
  2. Type "python manage.py runserver" in cmd.
  3. Vola!!! your server is running on your local machine. 
- 4. Just go to the link displayed in the command panel through your favourite browser.
+ 4. Just go to the link displayed in the cmd through your favourite browser.
  5. You will see website running.
  6. If you want to login then credentials is 
          Username: joshi ,
