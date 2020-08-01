@@ -1,2 +1,2 @@
 # PenIt-Personal Blogging Website
- Will be added later
+ Project made using Django and big thanks to summernote for text input format field. Users who are very fond of writing blog post could utilize this.
