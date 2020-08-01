@@ -32,4 +32,4 @@
 
 
  # Now if you want it, you can use it.
- I would like if you mention last line in your site but that's fine with me if you do not. So summerise that it is open to be used by all.
+ I would be glad if you mention last line in your website but that's fine with me if you do not. So to summerise that it is open to be used by all.
