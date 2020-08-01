@@ -12,8 +12,8 @@
  4. Just go to the link displayed in the command panel through your favourite browser.
  5. You will see website running.
  6. If you want to login then credentials is 
-         Username: joshi
-         Password: hello123
+         Username: joshi ,
+         Password: hello123 .
     This is not my personal password so don't try. xD
  7. If you want to change password then write "python manage.py createsuperuser" in cmd opened in first step.
  
