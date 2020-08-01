@@ -5,7 +5,7 @@
  
  
  
- # How to run project downloading?
+ # How to run project after downloading?
  1. Goto folder try Django where manage.py is present from your cmd or linux terminal.
  2. Type "python manage.py runserver" in cmd.
  3. Vola!!! your server is running on your local machine. 
@@ -18,7 +18,7 @@
  7. If you want to change password then write "python manage.py createsuperuser" in cmd opened in first step.
  
  
- # What can it do?
+ # What it could do?
  1. Help you create blogs and display it in the webpage... Not just it and many more.
  2. You can totally manage how your blogs will look like using summernote.
  3. Blogs are accompanied by display picture that describes your blog. This is not compulsory.
