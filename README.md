@@ -5,11 +5,16 @@
  
  
  # How to run project downloading?
- 1. Goto folder try Django from your cmd or linux terminal.
- 2. Type "python manage.py runserver"
+ 1. Goto folder try Django where manage.py is present from your cmd or linux terminal.
+ 2. Type "python manage.py runserver" in cmd.
  3. Vola!!! your server is running on your local machine. 
  4. Just go to the link displayed in the command panel through your favourite browser.
  5. You will see website running.
+ 6. If you want to login then credentials is 
+         Username: joshi
+         Password: hello123
+    This is not my personal password so don't try. xD
+ 7. If you want to change password then write "python manage.py createsuperuser" in cmd opened in first step.
  
  # What can it do?
  1. Help you create blogs and display it in the webpage... Not just it and many more.
@@ -22,5 +27,5 @@
  8. You can update an existing blog.
  9. Search for your blogs through search button at the top. And it not only search from titles of your blog but also contents of your blog.
 
- # Now do you want it can use it.
+ # Now if you want it, you can use it.
  I would like if you mention last line in your site but that's fine with me if you do not. So summerise that it is open to be used by all.
