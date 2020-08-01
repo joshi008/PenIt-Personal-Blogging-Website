@@ -15,9 +15,12 @@
  1. Help you create blogs and display it in the webpage... Not just it and many more.
  2. You can totally manage how your blogs will look like using summernote.
  3. Blogs are accompanied by display picture that describes your blog. This is not compulsory.
- 4. Then you can create slug for your webpage links. Slug is like www.penit.com/blog/dog_is_best  <= here Slug is dog_is_best
+ 4. Then you can create slug for your webpage links. Like www.penit.com/blog/dog_is_best  <= here Slug is dog_is_best
  5. You can decide to publish it in your website or make it a draft by either giving publish date or not respectively.
  6. Latest blogs will be displayed in the main page.
  7. And blog page will display every blog. It will display your drafts only if you are logged in. So readers will see only your published items.
  8. You can update an existing blog.
  9. Search for your blogs through search button at the top. And it not only search from titles of your blog but also contents of your blog.
+
+ # Now do you want it can use it.
+ I would like if you mention last line in your site but that's fine with me if you do not. So summerise that it is open to be used by all.
