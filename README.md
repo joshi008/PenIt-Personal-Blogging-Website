@@ -34,4 +34,4 @@
  # Now if you want it, you can use it.
  I would be glad if you mention last line in your website but that's fine with me if you do not. So to summerize that it is open to be used by anyone and everyone out there.
  
- Would host ths website on Heroku in the near future but not for personal use just to show example.
+ Would host this web app on Heroku in the near future but not for personal use just to show example.
