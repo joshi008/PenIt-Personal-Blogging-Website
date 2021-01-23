@@ -57,7 +57,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ROOT_URLCONF = 'try_django.urls'
 
@@ -87,6 +90,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'CONN_MAX_AGE': 500
     }
 }
 
@@ -148,11 +152,14 @@ if DEBUG:
     ]
 else:
     STATIC_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'static')
-    django_heroku.settings(locals())
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, 'staticfiles')
+    ]
+    
 
 
 MEDIA_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'media/')
 
 MEDIA_URL = '/media/'
 
-
+django_heroku.settings(locals())
