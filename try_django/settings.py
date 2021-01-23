@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'jfqw$ev6c#l$#l#4p*-30ez902cgbzw#52*&#0d=l18zq@u#4('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['penit-blog.herokuapp.com','*']
 
