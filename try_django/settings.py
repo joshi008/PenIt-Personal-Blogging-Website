@@ -51,16 +51,15 @@ SUMMERNOTE_THEME = 'bs4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ROOT_URLCONF = 'try_django.urls'
 
@@ -148,21 +147,16 @@ LOCAL_STATIC_CDN_PATH = os.path.join(os.path.dirname(BASE_DIR), 'static_cdn_test
 #     os.path.join(BASE_DIR, 'staticfiles')
 # ]
 
-if DEBUG:
-    STATIC_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'static')
-    STATICFILES_DIRS = [
-        os.path.join(BASE_DIR, 'staticfiles')
-    ]
-else:
-    STATIC_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'static')
-    STATICFILES_DIRS = [
-        os.path.join(BASE_DIR, 'staticfiles')
-    ]
-    
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'staticfiles')
+]
 
+STATIC_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'static')
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'media/')
 
 MEDIA_URL = '/media/'
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
