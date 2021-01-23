@@ -26,7 +26,7 @@ SECRET_KEY = 'jfqw$ev6c#l$#l#4p*-30ez902cgbzw#52*&#0d=l18zq@u#4('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 LOGIN_URL = '/login'
 
@@ -133,15 +133,26 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 LOCAL_STATIC_CDN_PATH = os.path.join(os.path.dirname(BASE_DIR), 'static_cdn_test')
 
-STATIC_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'static') # live aws and s3
+# STATIC_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'static') # live aws and s3
+# STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'assets')
+# STATIC_ROOT = '/home/username/projects/site/assets/'
 
-STATICFILES_DIRS=[
-    os.path.join(BASE_DIR, 'staticfiles')
-]
+# STATICFILES_DIRS=[
+#     os.path.join(BASE_DIR, 'staticfiles')
+# ]
+
+if DEBUG:
+    STATIC_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'static')
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, 'staticfiles')
+    ]
+else:
+    STATIC_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'static')
+    django_heroku.settings(locals())
+
 
 MEDIA_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'media/')
 
 MEDIA_URL = '/media/'
 
 
-django_heroku.settings(locals())
