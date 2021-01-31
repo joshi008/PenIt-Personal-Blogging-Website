@@ -3,7 +3,7 @@
  
  Users who are very fond of writing blogs and always wanted a blog of their own can have it and utilise it for changing their hobby into a passion.
  
- 
+ [Demo](https://penit-blog.herokuapp.com/)
  
  # How to run project after downloading?
  1. Enter folder "try Django" where manage.py is present using your cmd or linux terminal.
