@@ -36,4 +36,4 @@
  # Now if you want it, you can use it.
  I would be glad if you mention last line in your website but that's fine with me if you do not. So to summerize that it is open to be used by anyone and everyone out there.
  
- I have now successfully launched it on heroku(https://penit-blog.herokuapp.com/) though since heroku server sleeps and static data is lost after some time, so need to have good server.  But for demo you could hop here(https://penit-blog.herokuapp.com/) . 
+ I have now successfully launched it on heroku[https://penit-blog.herokuapp.com/] though since heroku server sleeps and static data is lost after some time, so need to have good server.  But for demo you could hop here[https://penit-blog.herokuapp.com/] . 
