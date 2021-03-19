@@ -4,7 +4,7 @@ Django==3.1.5
 django-heroku==0.3.1
 django-summernote==0.8.11.6
 gunicorn==20.0.4
-Pillow==8.1.0
+Pillow==8.1.1
 psycopg2==2.8.6
 pytz==2020.5
 sqlparse==0.4.1
